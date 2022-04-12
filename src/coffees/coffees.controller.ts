@@ -1,10 +1,11 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post,Res  } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Patch, Post,Query,Res  } from '@nestjs/common';
 
 @Controller('coffees')
 export class CoffeesController {
     @Get()
-    findAll(@Res() response){
-     return 'This is Coffee endpoint'
+    findAll(@Query() sadasdsad){
+        const {limit, offset} = sadasdsad
+     return `This is Coffee endpoint. Limit: ${limit}, Offset: ${offset}`
     }
 
     @Get(':id')
